@@ -22,6 +22,7 @@ public class Book {
     private UUID id;
     @Column(name = "code")
     private String code;
+    @Column(name = "description")
     private String description;
     private String name;
 
