@@ -2,6 +2,7 @@ package com.hampcode.deploy_ghactions.books;
 
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ public class Book {
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
+    @Column(name = "code")
     private String code;
     private String description;
     private String name;
