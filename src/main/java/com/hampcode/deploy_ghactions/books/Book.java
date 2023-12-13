@@ -24,6 +24,7 @@ public class Book {
     private String code;
     @Column(name = "description")
     private String description;
+    @Column(name = "name")
     private String name;
 
 }
