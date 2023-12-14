@@ -28,7 +28,7 @@ jobs:
       
   deploy:
     needs: build
-    runs-on: self-hosted
+    runs-on: [aws-ec-4]
     steps:
       - name: Pull image from docker hub
         run: docker pull hmendozap/deploy_ghactions_v1:1.0
