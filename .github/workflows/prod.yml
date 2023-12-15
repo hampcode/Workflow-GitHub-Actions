@@ -16,3 +16,16 @@ jobs:
            with:
              distribution: 'temurin'
              java-version: '17'
+             
+         - name: Build project
+           run: mvn clean install -DskipTests
+
+         - name: Login Docker Hub
+           run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+           
+         - name: Build docker image
+           run: docker build -t hmendozap/desploy_ghactions .
+
+         - name: Push imagen Docker Hub
+           run: docker push hmendozap/desploy_ghactions
+           
